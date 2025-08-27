@@ -46,7 +46,7 @@ Optional arguments
 The system is evaluated against base LLM generation (no retrieval) to measure the benefit of retrieval + reranking.
 
 
-### Evaluation Results
+### Evaluation Results on llama3.1:8b-instruct
 
 | Retriever        | Reranker         | Score (%) |
 |------------------|------------------|-----------|
