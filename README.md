@@ -31,7 +31,7 @@ ollama pull llama3.1:8b
 
 ### 3. Ask a question
 ```
-python answer_engine.py --q "What happened in 1915?"
+python src/answer_engine.py --q "What happened in 1915?"
 ```
 Optional arguments
 

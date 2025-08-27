@@ -5,7 +5,7 @@ import torch
 
 import json
 import re
-from data_processing.huggingface_data import download_file
+from data_processing.huggingface_data import download_file_sync
 from huggingface_hub import login
 from rank_bm25 import BM25Okapi
 
@@ -41,11 +41,11 @@ def zillis(query,topk=100):
 
 
 def splade(query,chunks_path,doc_embs_path,topk=5):
-    download_file(chunks_path)
-    with open(os.path.join("downloaded_data",chunks_path), "r") as f:
+    download_file_sync(chunks_path)
+    with open(os.path.join("data",chunks_path), "r") as f:
         chunks = [json.loads(line) for line in f]
-    download_file(doc_embs_path)
-    doc_embs = torch.load(os.path.join("downloaded_data",doc_embs_path), map_location=torch.device("cpu"))
+    download_file_sync(doc_embs_path)
+    doc_embs = torch.load(os.path.join("data",doc_embs_path), map_location=torch.device("cpu"))
 
     login(token=os.getenv("HF_API_KEY"))
     model = SparseEncoder("naver/splade-v3").to("cpu")
