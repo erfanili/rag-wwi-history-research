@@ -1,4 +1,4 @@
-# Retrieval-Augmented Generation for WWI History
+# Retrieval-Augmented Generation for History
 
 This project is a **Retrieval-Augmented Generation (RAG)** system that answers historical questions about **World War I** using a **fully local stack**. It combines:
 
